@@ -30,3 +30,5 @@ tensorflow==1.6.0
 
 Jpype1==0.6.2
 jieba==0.39
+
+rasa_nlu==0.12.3
