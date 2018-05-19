@@ -89,4 +89,4 @@ COPY config_spacy_duckling.yml ${RASA_NLU_HOME}/config.yml
 
 EXPOSE 5000
 
-CMD ["start", "-c", "config.yml", "--path", "/app/projects"]
+CMD ["python", "-m", "rasa_nlu.server", "start", "-c", "config.yml", "--path", "/app/projects"]
