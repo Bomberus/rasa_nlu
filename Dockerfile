@@ -89,5 +89,4 @@ COPY config_spacy_duckling.yml ${RASA_NLU_HOME}/config.yml
 
 EXPOSE 5000
 
-ENTRYPOINT ["./entrypoint.sh"]
 CMD ["start", "-c", "config.yml", "--path", "/app/projects"]
