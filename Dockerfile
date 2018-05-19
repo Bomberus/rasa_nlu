@@ -78,7 +78,7 @@ RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure
 ## done java
 
 
-RUN pip install -r alt_requirements/requirements_full.txt
+RUN pip install -r requirements.txt
 
 RUN pip install -e .
 
