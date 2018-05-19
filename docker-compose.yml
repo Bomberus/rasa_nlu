@@ -1,1 +1,33 @@
+version: '3'
 
+services:
+  ui:
+    image: paschmann/rasa-ui
+    depends_on:
+      - nlu
+    ports:
+      - 5001:5001
+    environment:
+      - rasanluendpoint=http://nlu:5000
+    links:
+       - nlu
+  nlu:
+    image: bomberus/rasa_nlu
+    volumes:
+      - nlu_projects:/app/projects
+      - nlu_log:/app/logs
+      - nlu_data:/app/data
+    links:
+      - duckling
+    environment:
+      - RASA_DUCKLING_HTTP_URL=http://duckling:8000
+    ports:
+      - 5000:5000
+    depends_on:
+      - duckling
+  
+  duckling:
+    image: bomberus/duckling
+    ports:
+      - 8000:8000
+    
