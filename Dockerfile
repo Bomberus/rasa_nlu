@@ -80,8 +80,6 @@ RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure
 
 RUN pip install -r requirements.txt
 
-RUN pip install -e .
-
 RUN pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.0.0/en_core_web_md-2.0.0.tar.gz --no-cache-dir > /dev/null \
     && python -m spacy link en_core_web_md en
 
